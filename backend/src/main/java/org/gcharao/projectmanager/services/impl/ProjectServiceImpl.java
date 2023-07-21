@@ -4,7 +4,8 @@ import org.gcharao.projectmanager.dtos.ProjectDTO;
 import org.gcharao.projectmanager.entities.Project;
 import org.gcharao.projectmanager.mapper.Mappable;
 import org.gcharao.projectmanager.repositories.ProjectRepository;
-import org.gcharao.projectmanager.services.ServiceAll;
+import org.gcharao.projectmanager.services.ServiceProject;
+import org.gcharao.projectmanager.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProjectServiceImpl implements Mappable, ServiceAll<ProjectDTO> {
+public class ProjectServiceImpl implements Mappable, ServiceProject {
 
     @Autowired
     private ProjectRepository repository;
@@ -24,8 +25,12 @@ public class ProjectServiceImpl implements Mappable, ServiceAll<ProjectDTO> {
 
     @Override
 
-    public Optional<ProjectDTO> findById(Long id) {
-        return Optional.of(map(repository.findById(id), ProjectDTO.class));
+    public ProjectDTO findById(Long id) {
+        Optional<Project> project = repository.findById(id);
+        if (!project.isPresent()){
+            throw new ResourceNotFoundException("Projeto "+ id +" não encontrado.");
+        }
+        return map(project.get(), ProjectDTO.class);
     }
 
     @Override
