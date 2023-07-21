@@ -1,9 +1,7 @@
 package org.gcharao.projectmanager.resources.exceptions;
 
-
-
-import com.agrocad.main.services.exceptions.DatabaseException;
-import com.agrocad.main.services.exceptions.ResourceNotFoundException;
+import org.gcharao.projectmanager.services.exceptions.ResourceNotFoundException;
+import org.gcharao.projectmanager.services.exceptions.DatabaseException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
