@@ -2,6 +2,7 @@ package org.gcharao.projectmanager.dtos;
 
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -13,8 +14,8 @@ public class ActivityDTO implements Serializable {
 
     private Long id;
     private String name;
+    @CreatedDate
     private Instant initialDate;
     private Instant finalDate;
     private List<TaskDTO> tasks;
-    private ProjectDTO project;
 }

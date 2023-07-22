@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProjectServiceImpl implements Mappable, ServiceProject {
+public class ServiceProjectImpl implements Mappable, ServiceProject {
 
     @Autowired
     private ProjectRepository repository;

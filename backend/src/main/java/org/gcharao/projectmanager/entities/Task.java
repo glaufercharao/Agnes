@@ -21,4 +21,5 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "activity_id")
     private Activity activity;
+
 }
