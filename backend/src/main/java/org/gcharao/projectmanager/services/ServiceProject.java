@@ -1,6 +1,7 @@
 package org.gcharao.projectmanager.services;
 
 import org.gcharao.projectmanager.dtos.ProjectDTO;
+import org.gcharao.projectmanager.dtos.ProjectPersistDTO;
 import org.gcharao.projectmanager.entities.Project;
 
 import java.util.List;

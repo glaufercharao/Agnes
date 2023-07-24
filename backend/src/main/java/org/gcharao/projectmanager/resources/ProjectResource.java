@@ -1,6 +1,7 @@
 package org.gcharao.projectmanager.resources;
 
 import org.gcharao.projectmanager.dtos.ProjectDTO;
+import org.gcharao.projectmanager.dtos.ProjectPersistDTO;
 import org.gcharao.projectmanager.services.ServiceProject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

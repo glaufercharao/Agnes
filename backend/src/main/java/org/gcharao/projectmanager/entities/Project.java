@@ -1,5 +1,6 @@
 package org.gcharao.projectmanager.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.gcharao.projectmanager.enums.Status;
@@ -19,11 +20,11 @@ public class Project {
     private String name;
     private String description;
     private Status status;
-    @CreatedDate
     private Instant initialDate;
     private Instant finalDate;
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany
+    @JoinColumn(name = "project_id")
     private List<Activity> activities = new ArrayList<>();
 
     @ManyToOne
@@ -33,4 +34,9 @@ public class Project {
     @OneToOne
     @JoinColumn(name = "team_id")
     private Team team;
+
+    @PrePersist
+    public void setup(){
+        this.initialDate = Instant.now();
+    }
 }

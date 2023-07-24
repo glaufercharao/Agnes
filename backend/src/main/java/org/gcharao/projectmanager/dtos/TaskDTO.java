@@ -6,6 +6,7 @@ import org.gcharao.projectmanager.enums.Status;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.List;
 
 @Data
 public class TaskDTO implements Serializable {
@@ -17,5 +18,5 @@ public class TaskDTO implements Serializable {
     private Status status;
     private Instant initialDate;
     private Instant finalDate;
-    private Activity activity;
+    private ActivityTaskDTO activity;
 }

@@ -20,6 +20,7 @@ public class ServiceActivityImpl implements Mappable, ServiceActivity {
     private ActivityRepository repository;
     @Override
     public List<ActivityDTO> findAll() {
+        List<Activity> teste = repository.findAll();
         return map(repository.findAll(), ActivityDTO.class);
     }
 

@@ -1,5 +1,9 @@
 package org.gcharao.projectmanager.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.gcharao.projectmanager.enums.Status;
@@ -20,9 +24,12 @@ public class Activity {
     @CreatedDate
     private Instant initialDate;
     private Instant finalDate;
-    @OneToMany(mappedBy = "activity")
+    @OneToMany
+    @JoinColumn(name = "activity_id")
     private List<Task> tasks = new ArrayList<>();
-    @ManyToOne
-    @JoinColumn(name = "project_id")
-    private Project project;
+
+    @PrePersist
+    public void setup(){
+        this.initialDate = Instant.now();
+    }
 }

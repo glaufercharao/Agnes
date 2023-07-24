@@ -1,6 +1,7 @@
 package org.gcharao.projectmanager.services.impl;
 
 import org.gcharao.projectmanager.dtos.ProjectDTO;
+import org.gcharao.projectmanager.dtos.ProjectPersistDTO;
 import org.gcharao.projectmanager.entities.Project;
 import org.gcharao.projectmanager.mapper.Mappable;
 import org.gcharao.projectmanager.repositories.ProjectRepository;
