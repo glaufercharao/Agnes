@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "d4461d30-3217-4307-addf-52a7b0585cfe",
+		"name": "Agrotis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21314201"
+	},
+	"item": [
+		{
+			"name": "CadCompany",
+			"item": [
+				{
+					"name": "localhost:8080/company/3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/company/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"company",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/company",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Teste Save Companhia LTDA\",\r\n    \"initialDate\": \"2023-04-13T00:38:00Z\",\r\n    \"finalDate\": \"2023-04-13T01:38:00Z\",\r\n    \"cnpj\": \"40.876.523/0001-10\",\r\n    \"propertyInfo\": {\r\n        \"id\": 3,\r\n        \"name\": \"Nome exemplo fazenda 3\"\r\n    },\r\n    \"laboratory\": {\r\n        \"id\": 1,\r\n        \"name\": \"LABORATORIO XYZ LTDA 3\"\r\n    },\r\n    \"observation\": \"Teste de dados 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/company",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/company/2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/company/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"company",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/company",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"id\":3,\r\n    \"name\": \"Agrotis LTDA\",\r\n    \"initialDate\": \"2023-04-13T01:16:00Z\",\r\n    \"finalDate\": \"2023-04-13T01:38:00Z\",\r\n    \"cnpj\": \"40.876.523/0001-10\",\r\n    \"propertyInfo\": {\r\n        \"id\": 2,\r\n        \"name\": \"Nome exemplo fazenda 3\"\r\n    },\r\n    \"laboratory\": {\r\n        \"id\": 1,\r\n        \"name\": \"LABORATORIO XYZ LTDA 3\"\r\n    },\r\n    \"observation\": \"Teste de dados 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/company",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cad Properties info",
+			"item": [
+				{
+					"name": "localhost:8080/property/3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/property/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"property",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/property",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ministerio novo caminhho 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/property",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/property/2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/property/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"property",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/property",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"id\":2,\r\n    \"name\": \"Agrotis LTDA propriedades\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/property",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllProperties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/property",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"property"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cad laboratory",
+			"item": [
+				{
+					"name": "localhost:8080/laboratory/3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/laboratory/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"laboratory",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/laboratory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Teste Save Companhia LTDA 58\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/laboratory",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"laboratory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/laboratory/2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/laboratory/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"laboratory",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/laboratory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"id\":3,\r\n    \"name\": \"Agro real LTDA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/laboratory",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"laboratory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllLaboratory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/laboratory",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"laboratory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
