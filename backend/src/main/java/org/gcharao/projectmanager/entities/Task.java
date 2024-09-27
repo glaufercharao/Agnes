@@ -1,7 +1,5 @@
 package org.gcharao.projectmanager.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.gcharao.projectmanager.enums.Status;
@@ -17,6 +15,7 @@ public class Task {
     private Long id;
     private String title;
     private String description;
+    @Enumerated(EnumType.STRING)
     private Status status;
     private Instant initialDate;
     private Instant finalDate;

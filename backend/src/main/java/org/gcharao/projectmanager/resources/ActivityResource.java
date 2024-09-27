@@ -33,7 +33,7 @@ public class ActivityResource {
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity delete(@PathVariable Long id){
+    public ResponseEntity<HttpStatus> delete(@PathVariable Long id){
         service.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }

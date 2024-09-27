@@ -2,8 +2,10 @@ package org.gcharao.projectmanager.enums;
 
 public enum Status {
 
-    IN_PROGRESS(0, "IN_PROGRESS"), PENDING(1, "PENDING"),
-    CLOSE(2, "PENDING"), DONE(3, "CLOSE");
+    IN_PROGRESS(0, "IN_PROGRESS"),
+    PENDING(1, "PENDING"),
+    CLOSE(2, "CLOSE"),
+    DONE(3, "DONE");
 
     private Integer codigo;
     private String descricao;

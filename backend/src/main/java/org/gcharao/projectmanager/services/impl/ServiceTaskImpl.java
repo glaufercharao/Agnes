@@ -2,6 +2,7 @@ package org.gcharao.projectmanager.services.impl;
 
 import org.gcharao.projectmanager.dtos.TaskDTO;
 import org.gcharao.projectmanager.entities.Task;
+import org.gcharao.projectmanager.enums.Status;
 import org.gcharao.projectmanager.mapper.Mappable;
 import org.gcharao.projectmanager.repositories.TaskRepository;
 import org.gcharao.projectmanager.services.ServiceTask;
@@ -25,12 +26,14 @@ public class ServiceTaskImpl implements Mappable, ServiceTask {
     }
 
     @Override
+    public List<TaskDTO> findTask(Status status) {
+        return map(repository.findTaskByStatus(status).orElseThrow(() -> new ResourceNotFoundException("Tarefa com status " + status.getDescricao() + " não encontrada.")), TaskDTO.class);
+    }
+
+    @Override
     public TaskDTO findById(Long id) {
         Optional<Task> task = repository.findById(id);
-        if (!task.isPresent()){
-            throw new ResourceNotFoundException("Tarefa "+ id +" não encontrado.");
-        }
-        return map(task.get(), TaskDTO.class);
+        return map(task.orElseThrow(() -> new ResourceNotFoundException("Tarefa " + id + " não encontrado.")), TaskDTO.class);
     }
 
     @Override

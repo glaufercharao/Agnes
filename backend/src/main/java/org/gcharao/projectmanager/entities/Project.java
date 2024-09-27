@@ -1,10 +1,8 @@
 package org.gcharao.projectmanager.entities;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.gcharao.projectmanager.enums.Status;
-import org.springframework.data.annotation.CreatedDate;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -19,6 +17,7 @@ public class Project {
     private Long id;
     private String name;
     private String description;
+    @Enumerated(EnumType.STRING)
     private Status status;
     private Instant initialDate;
     private Instant finalDate;

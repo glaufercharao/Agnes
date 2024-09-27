@@ -1,12 +1,7 @@
 package org.gcharao.projectmanager.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.gcharao.projectmanager.enums.Status;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.time.Instant;

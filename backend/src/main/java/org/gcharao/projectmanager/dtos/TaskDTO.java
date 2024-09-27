@@ -1,12 +1,10 @@
 package org.gcharao.projectmanager.dtos;
 
 import lombok.Data;
-import org.gcharao.projectmanager.entities.Activity;
 import org.gcharao.projectmanager.enums.Status;
 
 import java.io.Serializable;
 import java.time.Instant;
-import java.util.List;
 
 @Data
 public class TaskDTO implements Serializable {

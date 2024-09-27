@@ -38,6 +38,18 @@ public class ResourceExceptionHandler {
         err.setPath(request.getRequestURI());
         return ResponseEntity.status(status).body(err);
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<StandardError> illegalArgument(IllegalArgumentException e,HttpServletRequest request){
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+        StandardError err = new StandardError();
+        err.setTimestamp(Instant.now());
+        err.setStatus(status.value());
+        err.setError("Argumento inválido");
+        err.setMessage("Status inexistente.");
+        err.setPath(request.getRequestURI());
+        return ResponseEntity.status(status).body(err);
+    }
     
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ValidationError> validation(MethodArgumentNotValidException e, HttpServletRequest request){

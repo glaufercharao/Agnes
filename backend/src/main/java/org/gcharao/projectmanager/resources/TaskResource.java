@@ -1,6 +1,8 @@
 package org.gcharao.projectmanager.resources;
 
+
 import org.gcharao.projectmanager.dtos.TaskDTO;
+import org.gcharao.projectmanager.enums.Status;
 import org.gcharao.projectmanager.services.ServiceTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,6 +22,11 @@ public class TaskResource {
     @GetMapping
     public ResponseEntity<List<TaskDTO>> findAll(){
         return ResponseEntity.ok(service.findAll());
+    }
+
+    @GetMapping("/status/{status}")
+    public ResponseEntity<List<TaskDTO>> findByStatus(@PathVariable String status){
+        return ResponseEntity.ok(service.findTask(Status.valueOf(status.toUpperCase())));
     }
 
     @GetMapping(value = "/{id}")
